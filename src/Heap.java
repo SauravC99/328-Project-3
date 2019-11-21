@@ -15,7 +15,7 @@ public class Heap {
         int largest;
         int l = left(i);
         int r = right(i);
-        if (l <= heapSize && a[l] > a[i])
+        if (l <= heapSize && a[l] > a[i] && l < a.length)
             largest = l;
         else
             largest = i;
