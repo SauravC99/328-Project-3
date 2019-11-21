@@ -15,7 +15,7 @@ public class Heap {
         int largest;
         int l = left(i);
         int r = right(i);
-        if (left(i) > a.length - 1)
+        if (left(i) > a.length- 1)
             l = a.length - 1;
         if (l <= heapSize && a[l] > a[i])
             largest = l;
@@ -71,7 +71,6 @@ public class Heap {
             heapify(arr, 0);
         }
     }
-
     static void printArray(int arr[])
     {
         int n = arr.length;
