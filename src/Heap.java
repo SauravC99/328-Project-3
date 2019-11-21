@@ -1,6 +1,4 @@
 public class Heap {
-
-    //int[] a = {1,3,5,2,4,9,7,8};
     public int parent(int index) {
         return (int)index / 2;
     }
@@ -71,6 +69,7 @@ public class Heap {
             heapify(arr, 0);
         }
     }
+
     static void printArray(int arr[])
     {
         int n = arr.length;
