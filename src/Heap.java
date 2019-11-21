@@ -15,10 +15,14 @@ public class Heap {
         int largest;
         int l = left(i);
         int r = right(i);
-        if (l <= heapSize && a[l] > a[i] && l < a.length)
+        if (left(i) > a.length - 1)
+            l = a.length - 1;
+        if (l <= heapSize && a[l] > a[i])
             largest = l;
         else
             largest = i;
+        if (right(i) > a.length - 1)
+            r = a.length - 1;
         if (r <= heapSize && a[r] > a[largest])
             largest = r;
         if (largest != i) {
@@ -31,14 +35,14 @@ public class Heap {
     }
     public void buildHeap(int[] a) {
         int size = a.length;
-        for (int i = size / 2; i >= 0; i+=-1) {
+        for (int i = size / 2; i >= 0; i--) {
             heapify(a, i);
         }
     }
     public void heapSort(int[] a) {
         int heapSize = a.length;
         buildHeap(a);
-        for (int i = a.length; i >= 1; i+=-1) {
+        for (int i = a.length - 1; i >= 1; i--) {
             int swap = a[i];
             a[i] = a[1];
             a[1] = swap;
@@ -87,7 +91,7 @@ public class Heap {
         int n = arr.length;
 
         Heap ob = new Heap();
-        ob.sort(arr);
+        ob.heapSort(arr);
 
         System.out.println("Sorted array is");
         printArray(arr);
